@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GUESS</title>
+  
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+  <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script> -->
+  <link rel="stylesheet" href="./assets/guess.css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="board">
+      <div id="dugout">
+        <ul></ul>
+      </div>
+      <div id="field">
+      </div>
+    </div>  
+    <div id="menu">
+      <input type="button" value="clear" id="clear" />
+      <input type="button" value="rules" id="rules" />
+      <input type="button" value="settings" id="settings" />
+    </div>
+  </div>
+
+  <div id="rulesPopup" class="popup hidden">
+      <h2>How to play Guess</h2>
+      <dl>
+        <dt>The goal:</dt>
+        <dd>There is a random sequence of colors that you need to match.</dd>
+        <dt>Each turn:</dt>
+        <dd>
+          Place <span class="rules-slots">four</span> colors in the <span class="rules-slots">four</span> slots. A color can be used more than once per sequence. Once each slot is filled you will get clues for how accurate your guess is.
+        </dd>
+        <dt>Reading the clues</dt>
+        <dd>
+          For each number of colors that you have correct a slot in the clues section will be filled. <strong>Red</strong> means you got a color in the correct slot. <strong>White</strong> means you got a correct color but not in the correct slot. <small><strong>note:</strong> The position of the clues does not indicate the position of the correct colors</small>
+        </dd>
+        <dd>
+          You get <span class="rules-turns">ten</span> turns to get it right.
+        </dd>
+        <dt>Enjoy</dt>
+        <dd></dd>
+      </dl>    
+    </div>
+    <div id="settingsPopup" class="popup hidden" style="float: left;">
+      <h2>Settings</h2>
+      <form id="settingsForm" action="#">
+        <ul>
+          <li>
+            <label for="noOfTurns">No. of turns:</label>
+            <!--<span id="noOfTurnsMin"></span>-->
+            <input id="noOfTurnsSlider" type="range" name="noOfTurns" min="5" max="12" value="10">
+            <!--<span id="noOfTurnsMax"></span>-->
+            <span id="noOfTurnsVal" class="sliderVal"></span>
+          </li>
+          <li>
+            <label for="noOfOptions">No. of colors:</label>
+            <input id="noOfOptionsSlider" type="range" name="noOfOptions" min="4" max="10" value="6">
+            <span id="noOfOptionsVal" class="sliderVal"></span>
+          </li>
+          <li>
+            <label for="pegsPerPlay">No of pegs:</label>
+            <input id="pegsPerPlaySlider" type="range" name="pegsPerPlay" min="4" max="6" value="4">
+            <span id="pegsPerPlayVal" class="sliderVal"></span>
+          </li>
+        </ul>
+
+        <br />
+
+        <input type="button" id="defaultSettings" value="reset">
+        <input type="submit" value="submit" />
+        <input type="button" id="cancelSettings" value="cancel" />
+      </form>
+    </div>
+  
+
+  <script src="assets/guess.js"></script>
+
+</body>
+</html>
