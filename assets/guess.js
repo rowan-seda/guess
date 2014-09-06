@@ -77,13 +77,13 @@ var guess = {
     $('#noOfOptionsVal').html(settings.noOfOptions);
     $('#pegsPerPlayVal').html(settings.pegsPerPlay);
 
-    $('#noOfTurnsSlider').on('change',function() {
+    $('#noOfTurnsSlider').on('input',function() {
       $('#noOfTurnsVal').html($(this).val());
     });
-    $('#noOfOptionsSlider').on('change',function() {
+    $('#noOfOptionsSlider').on('input',function() {
       $('#noOfOptionsVal').html($(this).val());
     });
-    $('#pegsPerPlaySlider').on('change',function() {
+    $('#pegsPerPlaySlider').on('input',function() {
       $('#pegsPerPlayVal').html($(this).val());
     });
   },
